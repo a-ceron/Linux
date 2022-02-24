@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ rclone --config=/home/aceron/.config/rclone/rclone.conf --vfs-cache-mode writes mount "unad":  /home/aceron/Onedrive

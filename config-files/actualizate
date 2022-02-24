@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Función para actualizar algún paquete de AUR
+upAUR(){
+    git clone $1 /tmp/aurtmp
+    cd /tmp/aurtmp
+    makepkg -si
+    cd ..
+    rm -rf /tmp/aurtmp
+    }
+
+clear
+
+echo "Actualizando sistema"
+echo "Actualizando paqueteria usando pacman"
+
+sudo pacman -Syu 
+
+echo "Paqueteria actualizada"
+
+clear
+sleep 1
+
+echo "Actualizando AUR"
+
+# Aquí se agrega el link del repositorio del paquete aur que se quiera actualizar
+upAUR https://aur.archlinux.org/visual-studio-code-bin.git
+clear
+
+echo "Actualización finalizada"

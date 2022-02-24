@@ -1,0 +1,20 @@
+#!/bin/bash
+
+day=$(date +%A)
+hour=$(date +%r)
+
+echo "Saludos Ariel es $day y son las $hour"
+
+echo "Acá un calendario del mes."
+cal 
+
+read -p "Quieres que se realicen actualizaciones [y/n]"$'\n' resp
+
+if [[ $resp = y ]] ; then
+	actualizate
+	echo "Iniciando sistema"
+	microsoft-edge-dev	
+else
+	echo "Iniciando sistema"
+	microsoft-edge-dev
+fi
